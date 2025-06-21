@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login Form</title>
+  <style>body 
+  {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #74ebd5, #ACB6E5);
+  margin: 0;
+  padding: 0;
+}
+
+/* ID selector */
+#login-box 
+{
+  background-color: white;
+  width: 300px;
+  padding: 25px;
+  margin: 80px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Class selector */
+.checkbox 
+{
+  margin: 10px 0;
+  font-size: 0.9em;
+}
+
+h2 
+{
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="password"] 
+{
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button 
+{
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover 
+{
+  background-color: #0056b3;
+}
+
+.signup 
+{
+  text-align: center;
+  margin-top: 12px;
+  font-size: 0.9em;
+}
+
+.signup a 
+{
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.signup a:hover 
+{
+  text-decoration: underline;
+}
+
+/* Unique rule: Shadow transition */
+#login-box:hover 
+{
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+  <div id="login-box">
+    <h2>Login to Your Account</h2>
+    <form id="login-form">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" minlength="8" required>
+
+      <div class="checkbox">
+        <input type="checkbox" id="showPassword">
+        <label for="showPassword">Show Password</label>
+      </div>
+
+      <button type="submit">Login</button>
+    </form>
+    <p class="signup">Don't have an account? <a href="#">Sign Up Now</a></p>
+  </div>
+
+  <script>
+    // Show/Hide Password
+    document.getElementById('showPassword').addEventListener('change', function () 
+    {
+      const pwd = document.getElementById('password');
+      pwd.type = this.checked ? 'text' : 'password';
+    });
+  </script>
+</body>
+</html>
